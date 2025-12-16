@@ -1,0 +1,22 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'hotel-service'
+    static_configs:
+      - targets: [ 'hotel-service:2112' ]
+        labels:
+          service: 'hotel-service'
+
+  - job_name: 'booking-service'
+    static_configs:
+      - targets: [ 'booking-service:2112' ]
+        labels:
+          service: 'booking-service'
+
+  - job_name: 'notification-service'
+    static_configs:
+      - targets: [ 'notification-service:2112' ]
+        labels:
+          service: 'notification-service'
